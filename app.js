@@ -33,7 +33,13 @@ app.get('/', (request, response) => {
     response.send('<h1> Welcome to Twilio! </h1>')
 });
 
-// new conference
+// Call Resource Demos
+app.post('/calls/cancel', src.calls.cancel)
+app.post('/calls/new', src.calls.new)
+
+
+
+// Conference Resource Demos
 app.post('/conferences/new', src.conferences.new);
 
 

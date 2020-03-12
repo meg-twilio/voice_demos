@@ -6,7 +6,6 @@ const VoiceResponse = require('twilio').twiml.VoiceResponse;
 const MODERATOR = '+19045371699'
 
 module.exports = {
-
     new: (request, response) => {
         const twiml = new VoiceResponse();
 
@@ -20,17 +19,16 @@ module.exports = {
                 statusCallback: 'http://httpbin.org/post',
                 // Note: These are call progress events NOT call statuses
                 statusCallbackEvent: ['initiated', 'ringing', 'answered', 'completed'],
-                statusCallbackMethod: 'POST'
+                statusCallbackMethod: 'POST', 
             });
-            console.log(response.body)
         } else {
             dial.conference('My conference', {
                 startConferenceOnEnter: false,
             });
-            console.log(response.body)
         };
-        console.log(response.body)
         response.type('text/xml');
         response.send(twiml.toString());
+        console.log(response.req.body);
+
     }
 }
