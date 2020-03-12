@@ -1,12 +1,11 @@
+
 const twilio = require('twilio')
 // const client = new twilio(process.env.ACCOUNT_SID, process.env.AUTH_TOKEN) 
 const VoiceResponse = require('twilio').twiml.VoiceResponse;
 
-
-
 module.exports = {
 
-    conferenceInit: (request, response) => {
+    new: (request, response) => {
         const twiml = new VoiceResponse();
 
         const dial = twiml.dial();

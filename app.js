@@ -12,7 +12,7 @@ const urlencoded = require('body-parser').urlencoded({ extended: false });
 
 // --------------------- INSTANCED MODULES --------------------- //
 
-const routes = require("./routes");
+const src = require("./src");
 const MDOERATOR = '+19045371699';
 
 
@@ -33,19 +33,10 @@ app.get('/', (request, response) => {
     response.send('<h1> Welcome to Twilio! </h1>')
 });
 
-
-app.get('/conferences', routes.conference);
-
-
-// app.get('/getPhoneNumbers', routes.get_phone_numbers)
-// app.get('/getBuyPhoneNumbers', routes.buy_phone_numbers)
-// app.get('/getCreateMgService', routes.create_mg_service)
-// app.get('/getAddPhoneNumbersToMgService', routes.add_phone_number_to_mg_service)
+// new conference
+app.post('/conferences/new', src.conferences.new);
 
 
-// app.get('/testAvailableNumbers', run.get_phone_numbers)
-// app.get('/testBuyPhoneNumbers', run.aquire_phone_numbers)
-// app.get('/testCreateMgService', run.make_service)
 
 
 // --------------------- START SERVER --------------------- //
