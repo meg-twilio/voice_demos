@@ -1,9 +1,8 @@
-const express = require(express);
+
+const express = require("express");
 const router = express.Router();
-const ctrl = require('../contollers');
+const ctrl = require('../controllers');
 
-router.post
+router.post('/conference_init', ctrl.conferences.conferenceInit);
 
-module.exports = {
-    conferences: require('./statusCallbacks')
-}
+module.exports = router;

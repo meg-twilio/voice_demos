@@ -1,7 +1,6 @@
 require('dotenv').config()
 
 // --------------------- MODULES --------------------- //
-
 const express = require('express');
 const twilio = require('twilio');
 const router = express.Router();
@@ -13,10 +12,8 @@ const urlencoded = require('body-parser').urlencoded({ extended: false });
 
 // --------------------- INSTANCED MODULES --------------------- //
 
-const routes = require("./src/service.js");
-const run = require("./src/serviceTwo.js");
+const routes = require("./routes");
 const MDOERATOR = '+19045371699';
-const VoiceResponse = require('twilio').twiml.VoiceResponse;
 
 
 // --------------------- GLOBAL VARIABLES --------------------- //
