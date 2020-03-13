@@ -9,4 +9,5 @@ Update you Environment Variables to include:
 Git Clone this gitHub file and run the following terminal commands: 
 
 Run npm install
+
 Start server on app.js 
