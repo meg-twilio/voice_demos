@@ -2,6 +2,10 @@ const twilio = require('twilio')
 // const client = new twilio(process.env.ACCOUNT_SID, process.env.AUTH_TOKEN) 
 const VoiceResponse = require('twilio').twiml.VoiceResponse;
 
+const client = new twilio(process.env.ACCOUNT_SID, process.env.AUTH_TOKEN)
+
+
+
 // Moderator variable can be updated to your desired PSTN number
 const MODERATOR = '+19045371699'
 
@@ -29,6 +33,12 @@ module.exports = {
         response.type('text/xml');
         response.send(twiml.toString());
         console.log(response.req.body);
+
+    },
+    get: (request, response) => {
+        client.conferences.list({ limit: 20 })
+            .then(conferences => conferences.forEach(c => console.log(c.sid)))
+            return response.json({ status: 200, message: `Successfully pulled conferences for your account` })
 
     }
 }

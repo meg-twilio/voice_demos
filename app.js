@@ -36,12 +36,15 @@ app.get('/', (request, response) => {
 // Call Resource Demos
 app.post('/calls/cancel', src.calls.cancel)
 app.post('/calls/new', src.calls.new)
-
+app.post('/calls/amdTesting', src.calls.amdTesting)
+app.post('/calls/getCarrier/:phoneNumber', src.calls.getCarrier)
 
 
 // Conference Resource Demos
 app.post('/conferences/new', src.conferences.new);
+app.get('/conferences/get', src.conferences.get);
 
+// Chat Resources 
 
 
 
