@@ -40,12 +40,23 @@ module.exports = {
     // Answering Machine Detection Testing - Scenario 2 
     amdTesting: (request, response) => {
         client.calls.create({
-            machineDetection: 'DetectMessageEnd',
-            twiml: `<Response><Say> Someone is trying to reach you! Lightphone will send you an MMS shortly with the voicemail. </Say></Response>`,
+
+            // machineDetection: 'DetectMessageEnd',
+            machineDetection: 'Enable',
+            // url for endpoint
+            url: 'https://postb.in/1584467225057-7358489544130',
+            method: 'POST',
+
+            // twiml: `<Response><Say> Someone is trying to reach you! Lightphone will send you an MMS shortly with the voicemail. </Say></Response>`,
             to: '+19045371699',
             from: '+16673031327'
+
         })
+        // 
         .then(call => console.log(call));
+        // conditional logic if human or answeredBy
+
+
 
         // trigger a message to the Queue to record PSTN_1's voicemail for PSTN_2
 
