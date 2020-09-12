@@ -23,7 +23,7 @@
     "express-session": "^1.17.0",
     "mongodb": "^3.5.4",
     "mongoose": "^5.9.2",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "request": "^2.88.2",
     "twilio": "^3.39.5"
   }
